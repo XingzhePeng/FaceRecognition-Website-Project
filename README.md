@@ -5,6 +5,5 @@
 
 ## A glance at FaceMaster
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hi, there. FaceMaster is such a website that classifies your photos using face recognition technology. To take a glance at FaceMaster, just have click at [FaceMaster](http://123.206.213.40/). An email is required to sign up for the website. You can upload your photos to website and it'll automatically recognize all the people in your photos. And then, it classifies all the photos by which people is there in the photo. The sample page of the website is as follow.
-
-asdfaf
+<br />
 ![Photo](sample.png)
