@@ -18,4 +18,23 @@
 >```bash
 >$sudo apt-get install python3-pip
 >```
->>Then time to install Django, the framework of FaceMaster. Simply run the command below or following the instructions on the [Django site](https://www.djangoproject.com/)
+>>Then time to install Django, the framework of FaceMaster. Simply run the command below or following the instructions on the [Django site](https://www.djangoproject.com/).
+>```bash
+>$sudo pip3 install Django
+>```
+>>Then comes the database. Install mysql-server, mysql-client and libmysqlclient-dev library by running the command below. You'll be asked to set a password for the root user when install mysql-server.
+>```bash
+>$sudo apt-get install mysql-server
+>$sudo apt-get install mysql-client
+>$sudo apt-get install libmysqlclient-dev
+>```
+>>It's also recommended to install mysql-workbench to get a friendlier access to the Mysql server if you in Ubuntu with GUI. Run this:
+>```bash
+>$sudo apt-get install mysql-workbench
+>```
+>>Install mysqlclient to build the bridge between Django and Mysql-server, run:
+>```bash
+>$sudo apt-get install python3-dev
+>$sudo pip3 install mysqlclient
+>```
+>
