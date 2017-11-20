@@ -79,4 +79,4 @@ Follow the steps below to launch FaceMaster
 >
 >I'd be really happy if you want to communicate with me and share your opinions.
 >
->My email is frankpeng740@yahoo.com
+>My email address is frankpeng740@yahoo.com
