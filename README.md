@@ -9,4 +9,4 @@
 ![Photo](sample.png)
 ## Requirement to deploy FaceMaster
 >This is a python3 project, so you should first install python3 on your platform.
->fa
+>>fa
