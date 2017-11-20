@@ -80,7 +80,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'demo',
         'USER': 'root',
-        'PASSWORD': 'pxzfrank',
+        'PASSWORD': 'your DB password',
         'HOST': '127.0.0.1',
         'PORT': '3306',
     }
@@ -130,10 +130,10 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 EMAIL_HOST = 'smtp.qq.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = '1154286928@qq.com'
-EMAIL_HOST_PASSWORD = 'nogigiksihpshggg'
+EMAIL_HOST_USER = 'your email address'
+EMAIL_HOST_PASSWORD = 'your email password'
 EMAIL_USE_TLS = True
-EMAIL_FROM = '1154286928@qq.com'
+EMAIL_FROM = 'your email address'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 
