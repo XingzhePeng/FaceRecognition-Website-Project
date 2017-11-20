@@ -51,4 +51,9 @@
 >```bash
 >$sudo pip3 install baidu-aip
 >```
-
+>>Finally, Install Apache to deploy FaceMaster on it. Install the necessary library mod-wsgi to make connection between Django and Apache. Run:
+>```bash
+>$sudo apt-get install apache2
+>$sudo apt-get install libapache2-mod-wsgi-py3
+>```
+>>
