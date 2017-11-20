@@ -71,7 +71,7 @@ Follow the steps below to launch FaceMaster
 >```bash
 >$python3 manage.py runserver
 >```
->>After all these steps, you can type "127.0.0.1/8000" in your browser address bar to access the "FaceMaster" you just deloyed.
+>>After all these steps, you can type "127.0.0.1:8000/" in your browser address bar to access the "FaceMaster" you just deloyed.
 >
 >>Hey, you were using the default Django server just now. To deploy it on Apache, there are way more steps to operate.
 ## Contact me
