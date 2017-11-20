@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>face photos</title>
+
+    {% load staticfiles %}
+
+    <link rel="stylesheet" href="{% static "css/main.css" %}">
+    <link rel="stylesheet" href="{% static "css/my.css" %}">
+
+    <link rel="icon" href="{% static "images/title.ico" %}" type="image/x-icon" />
+    <link rel="shortcut icon" href="{% static "images/title.ico" %}" type="image/x-icon" />
+
+    <script src="{% static "js/jquery-2.1.3.min.js" %}"></script>
+   <script src="{% static "js/plugins.js" %}"></script>
+
+</head>
+<body class="main" id="top">
+    <div class="top">
+    <div class="tubiao">
+        <a class="" href="/main/"><img class="tubiao" src="{% static "images/tubiao.png"%}"
+                              onmouseover="this.src='{% static "images/tubiao2.png"%}'"
+                              onmouseout="this.src='{% static "images/tubiao.png"%}'"/></a>
+    </div>
+    <a class="top_a" href="/main/">PHOTOS</a>
+    <a class="top_a1" href="/main/faces/">PEOPLE</a>
+    <a class="top_a2" href="javascript:upload_2()">UPLOAD</a>
+
+    <form id="file_form" action="{% url 'main:upload' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+        <input type="file" name="newpics" class="file" onchange="upload()" multiple="" accept=".jpg,.png,.gif"/>
+    </form>
+
+
+
+    <a id="header-menu-trigger" href="">
+		  	<span class="header-menu-icon"></span>
+		</a>
+
+		<nav id="menu-nav-wrap">
+
+			<a href="" class="close-button" title="close"><span>Close</span></a>
+
+	   	<h3>Face Master</h3>
+
+			<ul class="nav-list">
+				<li><a class="smoothscroll" href="/main/account/" title="">ACCOUNT</a></li>
+                <li><a class="smoothscroll" href="/main/" title="">PHOTOS</a></li>
+				<li><a class="smoothscroll" href="/main/faces/" title="">PEOPLE</a></li>
+				<li><a class="smoothscroll" href="javascript:upload_2()" title="">UPLOAD</a></li>
+				<li><a class="smoothscroll" href="/main/about/" title="">ABOUT AND FEEDBACK</a></li>
+			</ul>
+
+		</nav>
+
+</div>
+
+
+
+    <div class="pic_info_1">
+        <a href="javascript:history.back(-1);"><img class="big_back" src="{% static "images/back.png" %}"></a>
+        <img class="head" src="/PIC/{{ small_pic }}"/>
+        <p class="pi_faces_t">Photos of this face</p>
+    </div>
+
+    <div class="face_one_c">
+
+    {% for face_pic in face_pics %}<!--  face_pics page  -->
+        <a href="/main/pic/{{ face_pic.source_pic }}">
+        <img class="face_one_pic" src="/PIC/{{ face_pic.source_pic }}"/>
+        </a>
+    {% endfor %}
+
+    </div>
+
+<div id="go-top">
+		   <a class="smoothscroll_1" title="Back to Top" href="#top">
+               <img src="{% static "images/gotop.png"%}"/>
+		   </a>
+		</div>
+
+<script src="{% static "js/main.js" %}"></script>
+
+<script>
+        $('.face_one_c').height(816 + 'px');
+</script>
+
+</body>
+</html>

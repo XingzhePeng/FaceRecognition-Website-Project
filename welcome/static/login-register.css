@@ -1,0 +1,517 @@
+/*
+ *
+ * login-register modal
+ * Autor: Creative Tim
+ * Web-autor: creative.tim
+ * Web script: #
+ * 
+ */
+ 
+/*  Shake animation  */
+
+@charset "UTF-8";
+
+.animated {
+  -webkit-animation-duration: 0.5s;
+	   -moz-animation-duration: 0.5s;
+	     -o-animation-duration: 0.5s;
+	        animation-duration: 0.5s;
+	-webkit-animation-fill-mode: both;
+	   -moz-animation-fill-mode: both;
+	     -o-animation-fill-mode: both;
+	        animation-fill-mode: both;
+}
+
+.animated.hinges {
+	-webkit-animation-duration: 2s;
+	   -moz-animation-duration: 2s;
+	     -o-animation-duration: 2s;
+	        animation-duration: 2s;
+}
+
+.animated.slow {
+	-webkit-animation-duration: 3s;
+	   -moz-animation-duration: 3s;
+	     -o-animation-duration: 3s;
+	        animation-duration: 3s;
+}
+
+.animated.snail {
+	-webkit-animation-duration: 4s;
+	   -moz-animation-duration: 4s;
+	     -o-animation-duration: 4s;
+	        animation-duration: 4s;
+}
+
+@-webkit-keyframes shake {
+	0%, 100% {-webkit-transform: translateX(0);}
+	10%, 30%, 50%, 70%, 90% {-webkit-transform: translateX(-10px);}
+	20%, 40%, 60%, 80% {-webkit-transform: translateX(10px);}
+}
+
+@-moz-keyframes shake {
+	0%, 100% {-moz-transform: translateX(0);}
+	40%, 80% {-moz-transform: translateX(-10px);}
+	20%, 60% {-moz-transform: translateX(10px);}
+}
+
+@-o-keyframes shake {
+	0%, 100% {-o-transform: translateX(0);}
+	40%, 80% {-o-transform: translateX(-10px);}
+	20%, 60% {-o-transform: translateX(10px);}
+}
+
+@keyframes shake {
+	0%, 100% {transform: translateX(0);}
+	40%, 80% {transform: translateX(-10px);}
+	20%, 60% {transform: translateX(10px);}
+}
+
+.shake {
+	-webkit-animation-name: shake;
+	-moz-animation-name: shake;
+	-o-animation-name: shake;
+	animation-name: shake;
+}
+
+.login .modal-dialog{
+    width: 450px;
+}
+.login .modal-footer{
+    border-top: 0;
+    margin-top: 0px;
+    padding: 10px 20px 20px;
+}
+.login .modal-error{
+    border-top: 0;
+    margin-top: 0px;
+    padding: 10px 20px 20px;
+}
+.login .modal-header {
+    border: 0 none;
+    padding: 15px 15px 15px;
+/*     padding: 11px 15px; */
+}
+.login .modal-body{
+/*     background-color: #eeeeee; */
+}
+.login .division {
+    float: none;
+    margin: 0 auto 18px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+.login .division .line {
+    border-top: 1px solid #DFDFDF;
+    position: absolute;
+    top: 10px;
+    width: 34%;
+}
+.login .division .line.l {
+    left: 0;
+}
+.login .division .line.r {
+    right: 0;
+}
+.login .division span {
+    color: #424242;
+    font-size: 20px;
+}
+
+.login .forgot {
+    color: #797979;
+    margin-left: 0;
+    overflow: hidden;
+    text-align: right;
+    width: 100%;
+}
+
+.login .btn-login, .registerBox .btn-register, .emailBox .btn-email, .passwordBox .btn-password{
+    background-color: #00BBFF;
+    border-color: #00BBFF;
+    border-width: 0;
+    color: #FFFFFF;
+    display: block;
+    margin: 0 auto;
+    padding: 13px 50px;
+    text-transform: uppercase;
+    width: 100%;
+    font-size: 20px;
+}
+.login .btn-login:hover, .registerBox .btn-register:hover, .emailBox .btn-email:hover, .passwordBox .btn-password:hover{
+    background-color: #00A4E4;
+    color: #FFFFFF;
+}
+.login .form-control{
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.09);
+    box-shadow: 0 1px 0px 0px rgba(0, 0, 0, 0.09) inset;
+    color: #FFFFFF;
+}
+.login .form-control:hover{
+    background-color: rgba(0,0,0,.16);
+}
+.login .form-control:focus{
+    box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.04) inset;
+    background-color: rgba(0,0,0,0.23);
+    color: #FFFFFF;
+}
+.login .box .form input[type="text"], .login .box .form input[type="password"] {
+    border-radius: 4px;
+    border: none;
+    color: #333333;
+    font-size: 20px;
+    height: 55px;
+    margin-bottom: 15px;
+    padding: 13px 12px;
+    width: 100%;
+}
+
+
+@media (max-width:400px){
+    .login .modal-dialog{
+        width: 100%;
+    }
+}
+
+.big-login, .big-register{
+    background-color: #00bbff;
+    color: #FFFFFF;
+    border-radius: 4px;
+    border-width: 4px;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 200;
+    padding: 14px 30px;
+    text-transform: uppercase;
+    transition: all 0.3s ease 0s;
+}
+.big-login:hover{
+    background-color: #00A4E4;
+    color: #FFFFFF;
+}
+.big-register{
+    background-color: rgba(0,0,0,.0);
+    color: #00bbff;
+    border-color: #00bbff;
+}
+.big-register:hover{
+    border-color: #00A4E4;
+    color:  #00A4E4;
+}
+
+.welcomebody{
+    background-image:url('images/main1.jpg');
+    background-size:cover;
+    background-repeat:no-repeat;
+    overflow-x:hidden;
+    background-position: center,center;
+}
+
+.tubiao{
+    height: 8%;
+    position: absolute;
+    top: 3%;
+    left: 3%;
+}
+
+.name{
+    position: absolute;
+    color: white;
+    top: 4.7%;
+    left: 9%;
+    font-size: 35px;
+    font-weight: 600;
+    font-family: Arial, sans-serif;
+}
+.name:hover{
+    color: black;
+}
+
+/*定义一个名字为righteaseinAnimate动画，实现从页面的右边淡入页面效果*/
+@keyframes righteaseinAnimate{
+    0%{ transform: translateX(2000px); opacity: 0;}   /*在0%时设置文字在想X轴2000px位移处（右边），透明度为0，也就是看不见文字*/
+    100%{ transform: translateX(0px); opacity: 1;}      /*在100%时设置文字在想X轴0px位移处，也就是原始布局的位置，透明度为1，也就是文字可以看见了*/
+}
+@-webkit-keyframes righteaseinAnimate{
+    0%{ -webkit-transform: translateX(2000px); opacity: 0;}
+    100%{ -webkit-transform: translateX(0px); opacity: 1;}
+}
+@-o-keyframes righteaseinAnimate{
+    0%{ -webkit-transform: translateX(2000px); opacity: 0;}
+    100%{ -webkit-transform: translateX(0px); opacity: 1;}
+}
+@-ms-keyframes righteaseinAnimate{
+    0%{ -webkit-transform: translateX(2000px); opacity: 0;}
+    100%{ -webkit-transform: translateX(0px); opacity: 1;}
+}
+@-moz-keyframes righteaseinAnimate{
+    0%{ -webkit-transform: translateX(2000px); opacity: 0;}
+    100%{ -webkit-transform: translateX(0px); opacity: 1;}
+}
+
+@keyframes lefteaseinAnimate{
+    0%{ transform: translateX(-2000px); opacity: 0;}   /*在0%时设置文字在想X轴2000px位移处（右边），透明度为0，也就是看不见文字*/
+    100%{ transform: translateX(0px); opacity: 1;}      /*在100%时设置文字在想X轴0px位移处，也就是原始布局的位置，透明度为1，也就是文字可以看见了*/
+}
+@-webkit-keyframes lefteaseinAnimate{
+    0%{ -webkit-transform: translateX(-2000px); opacity: 0;}
+    100%{ -webkit-transform: translateX(0px); opacity: 1;}
+}
+@-o-keyframes lefteaseinAnimate{
+    0%{ -webkit-transform: translateX(-2000px); opacity: 0;}
+    100%{ -webkit-transform: translateX(0px); opacity: 1;}
+}
+@-ms-keyframes lefteaseinAnimate{
+    0%{ -webkit-transform: translateX(-2000px); opacity: 0;}
+    100%{ -webkit-transform: translateX(0px); opacity: 1;}
+}
+@-moz-keyframes lefteaseinAnimate{
+    0%{ -webkit-transform: translateX(-2000px); opacity: 0;}
+    100%{ -webkit-transform: translateX(0px); opacity: 1;}
+}
+
+.t{
+    height: 2000px;
+    margin: 0 auto;
+}
+.e{
+    height: 500px;
+    margin: 0 auto;
+}
+
+.t1{
+    animation: lefteaseinAnimate 0.8s ease 1;    /*调用已定义好的动画lefteaseinAnimate，全程运行时间1S，进入的速度曲线为ease，只播放一次*/
+    -webkit-animation: lefteaseinAnimate 0.8s ease 1;
+    -ms-animation: lefteaseinAnimate 0.8s ease 1;
+    -o-animation: lefteaseinAnimate 0.8s ease 1;
+    -moz-animation: lefteaseinAnimate 0.8s ease 1;
+
+    /*规定动画的最后状态为结束状态*/
+    animation-fill-mode:forwards;
+    -webkit-animation-fill-mode: forwards;
+      -o-animation-fill-mode: forwards;
+      -ms-animation-fill-mode: forwards;
+      -moz-animation-fill-mode: forwards;
+    font-weight: 800;
+    font-size: 70px;
+    position: absolute;
+    top: 20%;
+    left: 4%;
+    color: dimgrey;
+}
+.t2{
+    animation: lefteaseinAnimate 1s ease 1;    /*调用已定义好的动画lefteaseinAnimate，全程运行时间1S，进入的速度曲线为ease，只播放一次*/
+    -webkit-animation: lefteaseinAnimate 1s ease 1;
+    -ms-animation: lefteaseinAnimate 1s ease 1;
+    -o-animation: lefteaseinAnimate 1s ease 1;
+    -moz-animation: lefteaseinAnimate 1s ease 1;
+
+    /*规定动画的最后状态为结束状态*/
+    animation-fill-mode:forwards;
+    -webkit-animation-fill-mode: forwards;
+      -o-animation-fill-mode: forwards;
+      -ms-animation-fill-mode: forwards;
+      -moz-animation-fill-mode: forwards;
+    font-weight: 800;
+    font-size: 70px;
+    position: absolute;
+    top: 32%;
+    left: 4%;
+    color: black;
+}
+.t3{
+    animation: lefteaseinAnimate 1.2s ease 1;    /*调用已定义好的动画lefteaseinAnimate，全程运行时间1S，进入的速度曲线为ease，只播放一次*/
+    -webkit-animation: lefteaseinAnimate 1.2s ease 1;
+    -ms-animation: lefteaseinAnimate 1.2s ease 1;
+    -o-animation: lefteaseinAnimate 1.2s ease 1;
+    -moz-animation: lefteaseinAnimate 1.2s ease 1;
+
+    /*规定动画的最后状态为结束状态*/
+    animation-fill-mode:forwards;
+    -webkit-animation-fill-mode: forwards;
+      -o-animation-fill-mode: forwards;
+      -ms-animation-fill-mode: forwards;
+      -moz-animation-fill-mode: forwards;
+    font-weight: 800;
+    font-size: 70px;
+    position: absolute;
+    top: 44%;
+    left: 4%;
+    color: dimgrey;
+}
+.t4{
+    animation: righteaseinAnimate 1s ease 1;    /*调用已定义好的动画lefteaseinAnimate，全程运行时间1S，进入的速度曲线为ease，只播放一次*/
+    -webkit-animation: righteaseinAnimate 1s ease 1;
+    -ms-animation: righteaseinAnimate 1s ease 1;
+    -o-animation: righteaseinAnimate 1s ease 1;
+    -moz-animation: righteaseinAnimate 1s ease 1;
+
+    /*规定动画的最后状态为结束状态*/
+    animation-fill-mode:forwards;
+    -webkit-animation-fill-mode: forwards;
+      -o-animation-fill-mode: forwards;
+      -ms-animation-fill-mode: forwards;
+      -moz-animation-fill-mode: forwards;
+    font-weight: 800;
+    font-size: 70px;
+    position: absolute;
+    top: 44%;
+    right: 4%;
+    color: #189aff;
+    text-align: left;
+}
+.t5{
+    animation: righteaseinAnimate 1.2s ease 1;    /*调用已定义好的动画lefteaseinAnimate，全程运行时间1S，进入的速度曲线为ease，只播放一次*/
+    -webkit-animation: righteaseinAnimate 1.2s ease 1;
+    -ms-animation: righteaseinAnimate 1.2s ease 1;
+    -o-animation: righteaseinAnimate 1.2s ease 1;
+    -moz-animation: righteaseinAnimate 1.2s ease 1;
+
+    /*规定动画的最后状态为结束状态*/
+    animation-fill-mode:forwards;
+    -webkit-animation-fill-mode: forwards;
+      -o-animation-fill-mode: forwards;
+      -ms-animation-fill-mode: forwards;
+      -moz-animation-fill-mode: forwards;
+    font-weight: 800;
+    font-size: 70px;
+    position: absolute;
+    top: 56%;
+    right: 4%;
+    color: dimgrey;
+    text-align: left;
+}
+.t6{
+    animation: righteaseinAnimate 1.4s ease 1;    /*调用已定义好的动画lefteaseinAnimate，全程运行时间1S，进入的速度曲线为ease，只播放一次*/
+    -webkit-animation: righteaseinAnimate 1.4s ease 1;
+    -ms-animation: righteaseinAnimate 1.4s ease 1;
+    -o-animation: righteaseinAnimate 1.4s ease 1;
+    -moz-animation: righteaseinAnimate 1.4s ease 1;
+
+    /*规定动画的最后状态为结束状态*/
+    animation-fill-mode:forwards;
+    -webkit-animation-fill-mode: forwards;
+      -o-animation-fill-mode: forwards;
+      -ms-animation-fill-mode: forwards;
+      -moz-animation-fill-mode: forwards;
+    font-weight: 800;
+    font-size: 70px;
+    position: absolute;
+    top: 68%;
+    right: 4%;
+    color: #189aff;
+    text-align: left;
+}
+.t7{
+    height: 30%;
+    position: relative;
+    opacity: 0;
+    top: 63%;
+    left: 44%;
+}
+.t8{
+    font-size: 55px;
+    font-weight: 900;
+    position: absolute;
+    top: 128%;
+    left: 0;
+    color: white;
+    text-align: left;
+    opacity: 0;
+}
+.t9{
+    font-size: 55px;
+    font-weight: 900;
+    position: absolute;
+    top: 140%;
+    left: 0;
+    color: white;
+    text-align: left;
+    opacity: 0;
+}
+.t10{
+    font-size: 55px;
+    font-weight: 900;
+    position: absolute;
+    top: 152%;
+    left: 0;
+    color: white;
+    text-align: left;
+    opacity: 0;
+}
+.t11{
+    font-size: 55px;
+    font-weight: 900;
+    position: absolute;
+    top: 164%;
+    left: 0;
+    color: white;
+    text-align: left;
+    opacity: 0;
+}
+.mainfooter{
+    background-color: grey;
+    margin-top: 0;
+    text-align: right;
+}
+.footertext{
+    text-align: left;
+    color: rgb(196, 196, 196);
+    font-size: 24px;
+    top: 207.5%;
+    font-weight: 600;
+    padding-right: 2%;
+}
+.message_border{
+    border-style: solid;
+    border-color: #00BBFF;
+    border-width: 3px;
+    border-radius: 4px;
+    display: block;
+    padding: 75px 22px;
+    width: 100%;
+}
+.email_message{
+    width: 100%;
+    text-indent: 10px;
+    text-align: justify;
+    font-size: 22px;
+    color:dimgrey;
+}
+#load_u{
+    height: 60px;
+    position: absolute;
+    top: -53px;
+    left: 6px;
+    display: none;
+}
+.not_found{
+    background-color: #7e7e7e;
+    text-align: center;
+}
+.p404{
+    font-size: 90px;
+    color: white;
+    position: absolute;
+    top: 200px;
+    right: 30%;
+    left: 30%;
+    font-family: sans-serif;
+    font-weight: 900;
+}
+.beginning{
+    font-size: 40px;
+    color: white;
+    position: absolute;
+    top: 480px;
+    right: 30%;
+    left: 30%;
+    font-family: sans-serif;
+}
+.move{
+    color: #5fbbff;
+    text-decoration:none;
+}

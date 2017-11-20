@@ -1,0 +1,459 @@
+/*定义一个名字为righteaseinAnimate动画，实现从页面的右边淡入页面效果*/
+@keyframes righteaseinAnimate{
+    0%{ transform: translateX(30px); opacity: 0;}   /*在0%时设置文字在想X轴2000px位移处（右边），透明度为0，也就是看不见文字*/
+    100%{ transform: translateX(0px); opacity: 1;}      /*在100%时设置文字在想X轴0px位移处，也就是原始布局的位置，透明度为1，也就是文字可以看见了*/
+}
+@-webkit-keyframes righteaseinAnimate{
+    0%{ -webkit-transform: translateX(30px); opacity: 0;}
+    100%{ -webkit-transform: translateX(0px); opacity: 1;}
+}
+@-o-keyframes righteaseinAnimate{
+    0%{ -webkit-transform: translateX(30px); opacity: 0;}
+    100%{ -webkit-transform: translateX(0px); opacity: 1;}
+}
+@-ms-keyframes righteaseinAnimate{
+    0%{ -webkit-transform: translateX(30px); opacity: 0;}
+    100%{ -webkit-transform: translateX(0px); opacity: 1;}
+}
+@-moz-keyframes righteaseinAnimate{
+    0%{ -webkit-transform: translateX(30px); opacity: 0;}
+    100%{ -webkit-transform: translateX(0px); opacity: 1;}
+}
+
+
+/*定义一个名字为righteaseinAnimate动画，实现从页面的右边淡入页面效果*/
+@keyframes lefteaseinAnimate{
+    0%{ transform: translateX(-30px); opacity: 0;}   /*在0%时设置文字在想X轴2000px位移处（右边），透明度为0，也就是看不见文字*/
+    100%{ transform: translateX(0px); opacity: 1;}      /*在100%时设置文字在想X轴0px位移处，也就是原始布局的位置，透明度为1，也就是文字可以看见了*/
+}
+@-webkit-keyframes lefteaseinAnimate{
+    0%{ -webkit-transform: translateX(-30px); opacity: 0;}
+    100%{ -webkit-transform: translateX(0px); opacity: 1;}
+}
+@-o-keyframes lefteaseinAnimate{
+    0%{ -webkit-transform: translateX(-30px); opacity: 0;}
+    100%{ -webkit-transform: translateX(0px); opacity: 1;}
+}
+@-ms-keyframes lefteaseinAnimate{
+    0%{ -webkit-transform: translateX(-30px); opacity: 0;}
+    100%{ -webkit-transform: translateX(0px); opacity: 1;}
+}
+@-moz-keyframes lefteaseinAnimate{
+    0%{ -webkit-transform: translateX(-30px); opacity: 0;}
+    100%{ -webkit-transform: translateX(0px); opacity: 1;}
+}
+
+
+/*定义一个名字为righteaseinAnimate动画，实现从页面的右边淡入页面效果*/
+@keyframes upeaseinAnimate{
+    0%{ transform: translateY(40px); opacity: 0;}   /*在0%时设置文字在想X轴2000px位移处（右边），透明度为0，也就是看不见文字*/
+    100%{ transform: translateY(0px); opacity: 1;}      /*在100%时设置文字在想X轴0px位移处，也就是原始布局的位置，透明度为1，也就是文字可以看见了*/
+}
+@-webkit-keyframes upeaseinAnimate{
+    0%{ -webkit-transform: translateY(40px); opacity: 0;}
+    100%{ -webkit-transform: translateY(0px); opacity: 1;}
+}
+@-o-keyframes upeaseinAnimate{
+    0%{ -webkit-transform: translateY(40px); opacity: 0;}
+    100%{ -webkit-transform: translateY(0px); opacity: 1;}
+}
+@-ms-keyframes upeaseinAnimate{
+    0%{ -webkit-transform: translateY(40px); opacity: 0;}
+    100%{ -webkit-transform: translateY(0px); opacity: 1;}
+}
+@-moz-keyframes upeaseinAnimate{
+    0%{ -webkit-transform: translateY(40px); opacity: 0;}
+    100%{ -webkit-transform: translateY(0px); opacity: 1;}
+}
+/*google_blue:#4285f4*/
+a{
+    text-decoration:none;
+    font-family: sans-serif;
+}
+a:hover{
+    text-decoration:none;
+    font-family: sans-serif;
+}
+.main{
+    height: 100%;
+}
+
+.top{
+    height: 72px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    box-shadow: 0px 2px 10px 3px #d7d7d7;
+    z-index: 99999;
+    background-color: white;
+}
+
+.tubiao{
+    height: 52px;
+    position: absolute;
+    top: 7%;
+    left: 2%;
+}
+.top_a,.top_a1,.top_a2{
+    position: absolute;
+    text-decoration:none;
+    font-family: sans-serif;
+    color: #6b6b6b;
+    font-size: 26px;
+    font-weight: 600;
+}
+.top_a{
+    top:22px;
+    left: 130px;
+}
+.top_a1{
+    top:22px;
+    left: 270px;
+}
+.top_a2{
+    top:22px;
+    right: 120px;
+}
+.top_a:hover,.top_a1:hover,.top_a2:hover{
+    color: #4285f4;
+    font-family: sans-serif;
+}
+.pic_container1{
+    position: absolute;
+    top: 105px;
+    left: 8%;
+    right: 8%;
+    text-align: justify;
+}
+.pics_main{
+    height: 250px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+.pics_main:hover{
+    box-shadow: 0px 0px 15px 2px #949494;
+    transform: scale(1.1);
+    transition: all 0.2s ease 0s;
+    -webkit-transform: scale(1.1);
+    -webkit-transform: all 0.2s ease 0s;
+}
+.welcome{
+    font-size: 38px;
+    font-family: sans-serif;
+    font-weight: 600;
+    color: #909090;
+}
+.welcome_d{
+    position: absolute;
+    top: 200px;
+    text-align: center;
+    width: 100%;
+}
+.upload_t{
+    color: #0089ff;
+}
+.date{
+    font-size: 25px;
+    font-family: sans-serif;
+    font-weight: 600;
+    color: #6b6b6b;
+}
+.file{
+    opacity:0;
+    display: none;
+}
+.faces_c{
+    position: absolute;
+    top: 80px;
+    left: 5%;
+    right: 5%;
+    height: 100%;
+}
+.faces_text_c{
+    position: relative;
+    width: 100%;
+    text-align: center;
+    top: 40px;
+}
+.faces_text{
+    color: #6b6b6b;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-size: 65px;
+    font-weight: 900;
+    margin: 30px;
+}
+.faces_pic_c{
+    position: relative;
+    width: 100%;
+    top: 80px;
+}
+.pics_faces{
+    height: 150px;
+    margin-right: 15px;
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+    border-radius: 20px;
+}
+.pics_faces:hover {
+    box-shadow: 0px 0px 20px 2px #a0a0a0;
+    transform: scale(1.2);
+    transition: all 0.2s ease 0s;
+    -webkit-transform: scale(1.2);
+    -webkit-transform: all 0.2s ease 0s;
+}
+.pic_info{
+    position: fixed;
+    top: 125px;
+    left: 60px;
+    background-color: #ffffff;
+    width: 420px;
+    height: 814px;
+    box-shadow: 0px 0px 20px 2px #c7c7c7;
+    border-radius: 10px;
+    text-align: center;
+}
+.pic_info_1{
+    position: fixed;
+    top: 125px;
+    left: 60px;
+    background-color: #ffffff;
+    width: 420px;
+    height: 814px;
+    border-radius: 10px;
+    text-align: center;
+}
+.big_pic_c{
+    position: absolute;
+    top: 125px;
+    left: 520px;
+    background-color: #ffffff;
+}
+.big_back, .big_trash, .big_download{
+    height: 40px;
+    position: absolute;
+    top: 15px;
+}
+.big_back:hover, .big_trash:hover, .big_download:hover{
+    transform: scale(1.2);
+    transition: all 0.2s ease 0s;
+    -webkit-transform: scale(1.2);
+    -webkit-transform: all 0.2s ease 0s;
+}
+.big_back{
+    left: 15px;
+    top: 17px;
+}
+.big_back_a{
+    height: 40px;
+    position: absolute;
+    left: -80px;
+}
+.big_back_a:hover{
+    transform: scale(1.2);
+    transition: all 0.2s ease 0s;
+    -webkit-transform: scale(1.2);
+    -webkit-transform: all 0.2s ease 0s;
+}
+.big_trash{
+    right: 90px;
+}
+.big_download{
+    right: 20px;
+    top: 17px;
+}
+.info_date{
+    margin: 0px;
+    font-size: 20px;
+    font-family: sans-serif;
+    color: #969696;
+    font-weight: 600;
+    position: absolute;
+    top: 120px;
+    left: 20px;
+    animation: lefteaseinAnimate 1s ease 1;    /*调用已定义好的动画lefteaseinAnimate，全程运行时间1S，进入的速度曲线为ease，只播放一次*/
+    -webkit-animation: lefteaseinAnimate 1s ease 1;
+    -ms-animation: lefteaseinAnimate 1s ease 1;
+    -o-animation: lefteaseinAnimate 1s ease 1;
+    -moz-animation: lefteaseinAnimate 1s ease 1;
+}
+.inside{
+    margin: 0;
+    font-size: 49px;
+    font-family: sans-serif;
+    font-weight: 900;
+    color: #6a6a6a;
+    position: absolute;
+    top: 158px;
+    left: 20px;
+    animation: lefteaseinAnimate 1s ease 1;    /*调用已定义好的动画lefteaseinAnimate，全程运行时间1S，进入的速度曲线为ease，只播放一次*/
+    -webkit-animation: lefteaseinAnimate 1s ease 1;
+    -ms-animation: lefteaseinAnimate 1s ease 1;
+    -o-animation: lefteaseinAnimate 1s ease 1;
+    -moz-animation: lefteaseinAnimate 1s ease 1;
+}
+.face_inside_c{
+    position: absolute;
+    top: 230px;
+    left: 20px;
+    right: 20px;
+    text-align: left;
+}
+.face_inside{
+    height: 160px;
+    margin: 12px;
+    border-radius: 20px;
+    animation: upeaseinAnimate 0.6s ease 1;    /*调用已定义好的动画lefteaseinAnimate，全程运行时间1S，进入的速度曲线为ease，只播放一次*/
+    -webkit-animation: upeaseinAnimate 0.6s ease 1;
+    -ms-animation: upeaseinAnimate 0.6s ease 1;
+    -o-animation: upeaseinAnimate 0.6s ease 1;
+    -moz-animation: upeaseinAnimate 0.6s ease 1;
+}
+.face_inside:hover{
+    transform: scale(1.1);
+    transition: all 0.2s ease 0s;
+    -webkit-transform: scale(1.1);
+    -webkit-transform: all 0.2s ease 0s;
+}
+.slide{
+    position: absolute;
+    top: 78px;
+    left: 525px;
+    font-size: 18px;
+    font-family: sans-serif;
+    color: #8c8c8c;
+    font-weight: 600;
+}
+.face_one_c{
+    position: absolute;
+    top: 125px;
+    width: 1280px;
+    left: 520px;
+    text-align: justify;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px 2px #c7c7c7;
+    padding: 8px;
+}
+.head{
+    height: 240px;
+    border-radius: 50%;
+    position: relative;
+    top: 120px;
+    box-shadow: 0 0 0px 10px #a0a0a0;
+    -webkit-animation: upeaseinAnimate 0.6s ease 1;
+    -ms-animation: upeaseinAnimate 0.6s ease 1;
+    -o-animation: upeaseinAnimate 0.6s ease 1;
+    -moz-animation: upeaseinAnimate 0.6s ease 1;
+}
+.face_one_pic{
+    height: 250px;
+    border-radius: 10px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.face_one_pic:hover {
+    box-shadow: 0px 0px 15px 2px #949494;
+    transform: scale(1.1);
+    transition: all 0.2s ease 0s;
+    -webkit-transform: scale(1.1);
+    -webkit-transform: all 0.2s ease 0s;
+}
+.pi_faces_t{
+    position: absolute;
+    top: 14px;
+    left: 80px;
+    font-size: 36px;
+    margin: 0;
+    font-family: sans-serif;
+    font-weight: 900;
+    color: rgb(102, 102, 102);
+    animation: lefteaseinAnimate 1s ease 1;
+    -webkit-animation: lefteaseinAnimate 1s ease 1;
+    -ms-animation: lefteaseinAnimate 1s ease 1;
+    -o-animation: lefteaseinAnimate 1s ease 1;
+    -moz-animation: lefteaseinAnimate 1s ease 1;
+}
+.user_info_c{
+    height: 650px;
+    position: absolute;
+    top: 200px;
+    left: 15%;
+    right: 15%;
+    background-color: rgb(140, 140, 140);
+}
+.key{
+    display: inline-block;
+    position: absolute;
+    left: 115px;
+    right: 115px;
+    top: 30px;
+}
+.value{
+    display: inline-block;
+    position: absolute;
+    top: 30px;
+    left: 480px;
+    right: 100px;
+}
+.user_info{
+    font-size: 40px;
+    font-family: sans-serif;
+    color: white;
+    text-align: justify;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.signout{
+    position: absolute;
+    top: 480px;
+    left: 110px;
+    width: 180px;
+    height: 80px;
+    background-color: #ffc137;
+    border-radius: 10px;
+    text-align: center;
+}
+.signout:hover{
+    position: absolute;
+    top: 480px;
+    left: 110px;
+    width: 180px;
+    height: 80px;
+    background-color: #bf9129;
+    border-radius: 10px;
+}
+.account_a{
+    color: rgb(255, 193, 55);
+}
+.account_a:hover{
+    color: rgb(216, 163, 47);
+}
+.account_a1{
+    position: relative;
+    top: 22px;
+    font-size: 30px;
+    color: #676767;
+    font-weight: bold;
+}
+.reset_p{
+    position: absolute;
+    top: 300px;
+    left: 115px;
+    right: 115px;
+    font-size: 32px;
+    color: white;
+}
+.about_t{
+    font-size: 33px;
+    color: white;
+    letter-spacing: 1px;
+    text-align: justify;
+    line-height: 130%;
+}
