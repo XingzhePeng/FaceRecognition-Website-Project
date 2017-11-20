@@ -56,4 +56,8 @@ FaceMaster is a django-based website. It uses Mysql as its database. Besides, a 
 >$sudo apt-get install apache2
 >$sudo apt-get install libapache2-mod-wsgi-py3
 >```
->>
+Follow the steps below to launch FaceMaster
+>>Create a database by running:
+>```mysql
+>$CREATE DATABASE demo CHARACTER SET utf8;
+>```
