@@ -47,3 +47,8 @@
 >```bash
 >$sudo pip3 install itsdangerous
 >```
+>>Also, the face recognition library is from Baidu, run the command below to install baidu-aip:
+>```bash
+>$sudo pip3 install baidu-aip
+>```
+
