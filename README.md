@@ -14,7 +14,7 @@
 >$echo alias python="/usr/bin/python3" >> ~/.bashrc
 >$source ~/.bashrc
 >```
->>Also, pip is a gorgeous tool or installing Python packages. Install pip3 by running:
+>>Also, pip is a gorgeous tool for installing Python packages. Install pip3 by running:
 >```bash
 >$sudo apt-get install python3-pip
 >```
