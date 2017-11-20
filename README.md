@@ -8,6 +8,6 @@
 >
 >[<img src="sample.png">](http://123.206.213.40/)
 ## Requirement to deploy FaceMaster
->>This is a python3 project, so you should first install python3 on your platform.
+>>This is a python3 project, so you should first install python3 on your platform. For Ubuntu16, 
 >
 >>fa
