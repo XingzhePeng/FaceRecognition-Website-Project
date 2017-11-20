@@ -76,5 +76,7 @@ Follow the steps below to launch FaceMaster
 >>Hey, you were using the default Django server just now. To deploy it on Apache, there are way more steps to operate.
 ## Contact me
 >The website is far from finished. 
+>
 >I'd be really happy if you want to communicate with me and share your opinions.
+>
 >My email is frankpeng740@yahoo.com
