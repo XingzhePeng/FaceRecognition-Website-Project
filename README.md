@@ -28,7 +28,7 @@
 >$sudo apt-get install mysql-client
 >$sudo apt-get install libmysqlclient-dev
 >```
->>It's also recommended to install mysql-workbench to get a friendlier access to the Mysql server if you in Ubuntu with GUI. Run this:
+>>It's also recommended to install mysql-workbench to get a friendlier access to the Mysql server if you're in Ubuntu with GUI. Run this:
 >```bash
 >$sudo apt-get install mysql-workbench
 >```
@@ -37,4 +37,13 @@
 >$sudo apt-get install python3-dev
 >$sudo pip3 install mysqlclient
 >```
->
+>>Install the cute celery and reddis, running this:
+>```bash
+>$sudo pip3 install celery
+>$sudo apt-get install redis-server
+>$sudo pip3 install redis
+>```
+>>I use a python library called itsdangerous to help generate a token for account-activation to set a time out, so run the command below to install it:
+>```bash
+>$sudo pip3 install itsdangerous
+>```
