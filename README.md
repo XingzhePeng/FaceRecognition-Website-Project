@@ -1,13 +1,13 @@
-# [<img src="welcome/static/images/tubiao.png" width="30"> FaceMaster](http://123.206.213.40/)
+# [<img src="welcome/static/images/tubiao.png" width="30"> FaceMaster](http://123.207.183.210/)
 * [FaceMaster at a glance](#facemaster-at-a-glance)
 * [Requirements to deploy FaceMaster](#requirements-to-deploy-facemaster)
 * [How to launch FaceMaster](#how-to-launch-facemaster)
 * [Contact me](#contact-me)
 
 ## FaceMaster at a glance
->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FaceMaster is such a website that can classify your photos using face recognition technology. To take a glance at FaceMaster, just click [here](http://123.206.213.40/). An email is required to sign up for the website. You can upload your photos to website and it'll automatically recognize all the people in your photos. And then, it classifies all the photos by which people is in the photo. The sample page of the website is as follow.
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FaceMaster is a research project by Frank. To take a glance at FaceMaster, just click [here](http://123.207.183.210/).You can get started by uploading some photos with human faces. What we first do is to extract all the face information in your photos. And with the technology called face recognition, we are able to find out which faces are the same person. Finally we keep an N:N relationship between the photos and people inside them. That is, we not only know all the people inside any particular photo but also know all the photos that contain one particular person. Here's a sample page.
 >
->[<img src="sample.png">](http://123.206.213.40/)
+>[<img src="sample.png">](http://123.207.183.210/)
 ## Requirements to deploy FaceMaster
 FaceMaster is a django-based website. It uses Mysql as its database. Besides, a celery plus reddis module is required to provide asynchronous task processing capabilities. All the required libraries and some tips will be given as below. Note that all the commands below are tested under Ubuntu 16.04.3 LTS 64 bit system, if you are in other distributions of linux, please change the command to the corresponding pattern.
 >>This is a python3 project, so you should first install python3 on your platform. Python3 is pre-installed on ubuntu but the default python version of the conmmand line is python2. If you're in ubuntu system, I recommend you to change the default python version to python3 in a safe way with the commands:
