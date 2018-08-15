@@ -9,9 +9,10 @@ from django.conf import settings as django_settings
 
 PIC_PATH = os.path.join(django_settings.BASE_DIR, 'PIC')
 
-APP_ID = '10128403'
-API_KEY = 'zeUnwI5xCIt2YLUasYNGKFpw'
-SECRET_KEY = 'g1KnckhU4iMTumuOkwk4hYwWzwxhEkGL'
+APP_ID='xxx'
+API_KEY='xxx'
+SECRET_KEY='xxx'
+
 FACE_TRUST = 0.6
 SAME_TRUST_1 = 61
 SAME_TRUST_2 = 51
@@ -92,7 +93,9 @@ def detect(username):
                     y_fix = int(y_cha / 5)
                     x_fix = int(7 * y_cha / 10 - x_cha / 2)
                 im = Image.open(os.path.join(PIC_PATH, bigimg.picname))
-                region = im.crop((x_min - x_fix, y_min - y_fix, x_max + x_fix, y_max + y_fix))
+
+                print((int(x_min - x_fix), int(y_min - y_fix), int(x_max + x_fix), int(y_max + y_fix)))
+                region = im.crop((int(x_min - x_fix), int(y_min - y_fix), int(x_max + x_fix), int(y_max + y_fix)))
                 (shotname, extension) = os.path.splitext(bigimg.picname)
                 small_pic_name = u'{0}_{1}{2}'.format(shotname, index, extension)
                 region.save(os.path.join(PIC_PATH, small_pic_name))
@@ -130,6 +133,19 @@ def identify(username):
                 first_score = first_face['scores'][0]
                 if identifyUser['result_num'] == 1:
                     if first_score > SAME_TRUST_1:
+
+
+                        if_face_exit = Face.objects.filter(username=username, uid=first_face_uid)
+                        if len(if_face_exit) == 0:
+                            new_face = Face(username=username,
+                                        uid=first_face_uid,
+                                        show_pic=small.small_pic,
+                                        face_info='')
+                            new_face.save()
+                        
+                        
+                        
+
                         addUser = aipFace.addUser(
                             first_face_uid,
                             '',
@@ -156,11 +172,23 @@ def identify(username):
                                         face_info='')
                         new_face.save()
                         time.sleep(2)
-                else:
+                elif identifyUser['result_num'] > 1:
                     second_face = identifyUser['result'][1]
                     second_face_uid = second_face['uid']
                     second_score = second_face['scores'][0]
                     if first_score > SAME_TRUST_1 or (first_score > SAME_TRUST_2 and second_face_uid == first_face_uid):
+
+
+                        if_face_exit = Face.objects.filter(username=username, uid=first_face_uid)
+                        if len(if_face_exit) == 0:
+                            new_face = Face(username=username,
+                                        uid=first_face_uid,
+                                        show_pic=small.small_pic,
+                                        face_info='')
+                            new_face.save()
+
+
+
                         addUser = aipFace.addUser(
                             first_face_uid,
                             '',

@@ -34,7 +34,7 @@
 
     <form id="file_form" action="{% url 'main:upload' %}" method="post" enctype="multipart/form-data">
     {% csrf_token %}
-        <input type="file" name="newpics" class="file" onchange="upload()" multiple="" accept=".jpg,.png,.gif,.jpeg,.ico,.bmp"/>
+        <input type="file" name="newpics" class="file" onchange="upload()" multiple="" accept=".jpg,.png,.gif,.jpeg"/>
     </form>
 
 
@@ -70,7 +70,7 @@
 {% if not send_pics %}
     <div class="welcome_d">
     <p class="welcome">
-    Your album is empty, <a class="upload_t" href="javascript:upload_2()">upload</a> some photos to find out how many faces are in your album
+    Your album is empty, <a class="upload_t" href="javascript:upload_2()">upload</a> some photos to see the magic of face recognition technology
     </p>
     </div>
 

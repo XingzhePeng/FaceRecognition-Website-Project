@@ -67,30 +67,33 @@ def delete(request, picname):
     for pic_face in pic_faces:
         uid = pic_face.uid
         small = pic_face.small_pic
+        if os.path.exists(os.path.join(PIC_PATH, small)):
+            os.remove(os.path.join(PIC_PATH, small))
+        pic_face.delete()
         test_uid_pics = PicFace.objects.filter(username=user_name, uid=uid)
         test_sourse = []
         for test_uid_pic in test_uid_pics:
             sourse = test_uid_pic.source_pic
-            if sourse not in test_sourse:
+            if sourse != picname:
                 test_sourse.append(sourse)
-        if len(test_uid_pics)>1 and len(test_sourse)>1:#should not delete Face object
-            if os.path.exists(os.path.join(PIC_PATH, small)):
-                os.remove(os.path.join(PIC_PATH, small))
-            pic_face.delete()
+        if len(test_sourse) > 0:#should not delete Face object
             face = Face.objects.get(username=user_name, uid=uid)
             if face.show_pic == small:#check if the show_pic was in the photo to be deleted
                 face.show_pic = PicFace.objects.filter(username=user_name, uid=uid).first().small_pic
                 face.save()
         else:
-            if os.path.exists(os.path.join(PIC_PATH, small)):
-                os.remove(os.path.join(PIC_PATH, small))
-            pic_face.delete()
-            Face.objects.get(username=user_name, uid=uid).delete()
+            face_try = Face.objects.filter(username=user_name, uid=uid)
+            if len(face_try) == 1: # ?
+                face_try[0].delete()
+
             aipFace.deleteGroupUser(user_name, uid)
             time.sleep(0.5)
     if os.path.exists(os.path.join(PIC_PATH, picname)):
         os.remove(os.path.join(PIC_PATH, picname))
-    Picture.objects.get(username=user_name, picname=picname).delete()
+
+    pic_try = Picture.objects.filter(username=user_name, picname=picname)
+    if len(pic_try) == 1:
+        pic_try[0].delete()
     return HttpResponseRedirect('/main')
 
 
@@ -102,21 +105,23 @@ def upload(request):
         imgs = request.FILES.getlist('newpics')
         for img in imgs:
             (shotname, extension) = os.path.splitext(img.name)
-            pic_name = shotname+'_'+user_name+extension
-            try:
-                Picture.objects.get(picname=pic_name)
-                continue
-            except:
-                new_img = Picture(
-                    username=user_name,
-                    picname=pic_name,
-                )
-                with open(os.path.join(PIC_PATH, pic_name), "wb+") as destination:
-                    for chunk in img.chunks():
-                        destination.write(chunk)
-                new_img.save()
+
+            if extension in ['.jpg', '.png', '.gif', '.jpeg']:
+                pic_name = shotname+'_'+user_name+extension
+                try:
+                    Picture.objects.get(picname=pic_name)
+                    continue
+                except:
+                    new_img = Picture(
+                        username=user_name,
+                        picname=pic_name,
+                    )
+                    with open(os.path.join(PIC_PATH, pic_name), "wb+") as destination:
+                        for chunk in img.chunks():
+                            destination.write(chunk)
+                    new_img.save()
         recog.delay(user_name)
-        return HttpResponseRedirect('/main')
+        return HttpResponseRedirect('/main/faces')
 
 
 @login_required
@@ -142,7 +147,14 @@ def oneface(request, small_pic):
     user_name = request.user.username
     uid = PicFace.objects.get(username=user_name, small_pic=small_pic).uid
     face_pics = PicFace.objects.filter(username=user_name, uid=uid, is_identified=1)
-    return render(request, 'main/face_pic.html', {'face_pics': face_pics, 'small_pic': small_pic})
+
+    pics = []
+    face_pics_final = []
+    for face_pic in face_pics:
+        if face_pic.source_pic not in pics:
+            pics.append(face_pic.source_pic)
+            face_pics_final.append(face_pic)
+    return render(request, 'main/face_pic.html', {'face_pics': face_pics_final, 'small_pic': small_pic})
 
 
 @login_required

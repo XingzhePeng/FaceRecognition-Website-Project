@@ -29,7 +29,7 @@
 
     <form id="file_form" action="{% url 'main:upload' %}" method="post" enctype="multipart/form-data">
     {% csrf_token %}
-        <input type="file" name="newpics" class="file" onchange="upload()" multiple="" accept=".jpg,.png,.gif"/>
+        <input type="file" name="newpics" class="file" onchange="upload()" multiple="" accept=".jpg,.png,.gif,.jpeg"/>
     </form>
 
 
@@ -60,11 +60,14 @@
         <a href="javascript:history.back(-1);"><img class="big_back_a" src="{% static "images/back.png" %}"></a>
 
         <div class="key">
-            <p class="about_t">Thanks for singing up for our site.<br/><br/>With the great power of face recognition
-                technology, Face Master is designed to identify the people in your photos and
-                classify your photos by the faces inside it. It's a research project by Frank.<br/><br/>We promise that
-                we never use your photos in anyother places, and you can delete your photo at anytime.<br><br/>
-                CONTACT US AT EMAIL : 1154286928@qq.com</p>
+            <p class="about_t">
+                FaceMaster is a research project by Frank. You can get started by uploading some photos with human faces.
+                What we first do is to extract all the face information in your photos. And with the technology called
+                face recognition, we are able to find out which faces are the same person. Finally we keep an N:N
+                relationship between the photos and people inside them. That is, we not only know all the people
+                inside any particular photo but also know all the photos that contain one particular person.<br><br/>
+                If you have any question, send email to us at 1154286928@qq.com
+            </p>
         </div>
 
 

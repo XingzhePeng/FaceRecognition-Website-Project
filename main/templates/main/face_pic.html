@@ -29,7 +29,7 @@
 
     <form id="file_form" action="{% url 'main:upload' %}" method="post" enctype="multipart/form-data">
     {% csrf_token %}
-        <input type="file" name="newpics" class="file" onchange="upload()" multiple="" accept=".jpg,.png,.gif"/>
+        <input type="file" name="newpics" class="file" onchange="upload()" multiple="" accept=".jpg,.png,.gif,.jpeg"/>
     </form>
 
 
@@ -61,7 +61,7 @@
     <div class="pic_info_1">
         <a href="javascript:history.back(-1);"><img class="big_back" src="{% static "images/back.png" %}"></a>
         <img class="head" src="/PIC/{{ small_pic }}"/>
-        <p class="pi_faces_t">Photos of this face</p>
+        <p class="pi_faces_t">Photos of this person</p>
     </div>
 
     <div class="face_one_c">

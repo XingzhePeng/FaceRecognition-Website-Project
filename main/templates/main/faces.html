@@ -63,7 +63,7 @@
 
     <form id="file_form" action="{% url 'main:upload' %}" method="post" enctype="multipart/form-data">
     {% csrf_token %}
-        <input type="file" name="newpics" class="file" onchange="upload()" multiple="" accept=".jpg,.png,.gif"/>
+        <input type="file" name="newpics" class="file" onchange="upload()" multiple="" accept=".jpg,.png,.gif,.jpeg"/>
     </form>
 
 
@@ -117,10 +117,6 @@
 		   </a>
 		</div>
 
-
-<script>
-        $('.faces_pic_c').height(816 + 'px');
-</script>
 
 <script src="{% static "js/main.js" %}"></script>
 

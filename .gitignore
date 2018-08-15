@@ -1,0 +1,9 @@
+*.pyc
+*.pyo
+__pycache__/
+.DS_Store
+node_modules/
+package-lock.json
+/demo_ui/dist/
+.idea/
+*.log

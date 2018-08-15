@@ -29,7 +29,7 @@
 
     <form id="file_form" action="{% url 'main:upload' %}" method="post" enctype="multipart/form-data">
     {% csrf_token %}
-        <input type="file" name="newpics" class="file" onchange="upload()" multiple="" accept=".jpg,.png,.gif"/>
+        <input type="file" name="newpics" class="file" onchange="upload()" multiple="" accept=".jpg,.png,.gif,.jpeg"/>
     </form>
 
 
@@ -60,18 +60,18 @@
         <a href="javascript:history.back(-1);"><img class="big_back_a" src="{% static "images/back.png" %}"></a>
 
         <div class="key">
-            <p class="user_info">My username :</p>
-            <p class="user_info">My email :</p>
+            <p class="user_info">My username</p>
+            <p class="user_info">My email</p>
         </div>
 
         <div class="value">
-            <p class="user_info">{{ user.username }}</p>
-            <p class="user_info">{{ user.email }}</p>
+            <p class="user_info">:  {{ user.username }}</p>
+            <p class="user_info">:  {{ user.email }}</p>
             {% comment %}<p class="user_info">If you want to reset your password, please
                 access our <a class="account_a" href="/">Sign in</a> page and click on the "Forgot password" link.</p>{% endcomment %}
         </div>
         <p class="reset_p">If you want to reset your password, please
-                access our <a class="account_a" href="/">Sign in</a> page and click on the "Forgot password" link.</p>
+                access our <a class="account_a" href="/">welcome</a> page, hit the SIGNIN button and click the "Forgot password" link.</p>
 
 
         <div class="signout"><a href="/main/signout/" class="account_a1">Sign out</a></div>

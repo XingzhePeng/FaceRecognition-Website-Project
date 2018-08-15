@@ -81,9 +81,9 @@ def signup(request):
         token = token_confirm.generate_validate_token(username)
         subject = u'Account Activation-Face Master'
         message = "\n\n".join(
-            [u'Dear {0}, you are receiving this email because you signed up for Face Master earlier'.format(username),
-             u'To activate your account, please click on the link below',
-             '/'.join(['http://123.206.213.40/activate', token])])
+            [u'Hello {0}, you are receiving this email because you signed up for FaceMaster earlier'.format(username),
+             u'To activate your account, please click the link below:',
+             '/'.join(['http://123.207.183.210/activate', token])])
         while True:
             num = send_mail(subject, message, django_settings.EMAIL_HOST_USER, [email], fail_silently=False)
             if num == 1:
@@ -123,9 +123,9 @@ def sendemail_a(request):
         username = User.objects.get(email=email).username
         token = token_confirm.generate_validate_token(username)
         subject = u'Account Activation-Face Master'
-        message = "\n\n".join([u'Dear {0}, you are receiving this email because you signed up for Face Master earlier'.format(username),
-                               u'To activate your account, please click on the link below',
-                               '/'.join(['http://123.206.213.40/activate', token])])
+        message = "\n\n".join([u'Hello {0}, you are receiving this email because you signed up for FaceMaster earlier'.format(username),
+                               u'To activate your account, please click the link below:',
+                               '/'.join(['http://123.207.183.210/activate', token])])
         while True:
             num = send_mail(subject, message, django_settings.EMAIL_HOST_USER, [email], fail_silently=False)
             if num == 1:
@@ -146,9 +146,9 @@ def reset(request):
         username = user.username
         token = token_confirm.generate_validate_token(username)
         subject = u'Password Reset-Face Master'
-        message = "\n\n".join([u'Dear {0}, you are receiving this email because you clicked "Forgot password" on our website'.format(username),
-                               u'To reset your password, please click on the link below',
-                               '/'.join(['http://123.206.213.40/reset_au', token])])
+        message = "\n\n".join([u'Hello {0}, you are receiving this email because you clicked "Forgot password" button on FaceMaster'.format(username),
+                               u'To reset your password, please click the link below',
+                               '/'.join(['http://123.207.183.210/reset_au', token])])
         while True:
             num = send_mail(subject, message, django_settings.EMAIL_HOST_USER, [email], fail_silently=False)
             if num == 1:
