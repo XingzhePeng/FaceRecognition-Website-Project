@@ -49,7 +49,7 @@ FaceMaster is a django-based website. It uses Mysql as its database. Besides, a 
 >```
 ## How to launch FaceMaster
 Follow the steps below to launch FaceMaster
->>Change the email configuration in this file:
+>>Change the database configuration and email configuration in this file:
 >```bash
 >FaceMaster/demo/settings.py
 >```
