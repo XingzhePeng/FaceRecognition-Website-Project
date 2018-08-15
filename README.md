@@ -10,8 +10,7 @@
 >[<img src="sample.png">](http://123.207.183.210/)
 ## Requirements to deploy FaceMaster
 FaceMaster is a django-based website. It uses Mysql as its database. Besides, a celery plus reddis module is required to provide asynchronous task processing capabilities. All the required libraries and some tips will be given as below. Note that all the commands below are tested under Ubuntu 16.04.3 LTS 64 bit system, if you are in other distributions of linux, please change the command to the corresponding pattern.
->>This is a python3 project, so you should first install python3 on your platform.
->>Also, pip is a gorgeous tool for installing Python packages. Install pip3 by running:
+>>This is a python3 project, so you should first install python3 on your platform.Also, pip is a gorgeous tool for installing Python packages. Install pip3 by running:
 >```bash
 >$sudo apt-get install python3-pip
 >```
@@ -59,14 +58,15 @@ Follow the steps below to launch FaceMaster
 >FaceMaster/main/task.py
 >```
 >>Create a database by typing:
+>```bash
+>mysql -uroot -p
+>```
 >```SQL
 >CREATE DATABASE demo CHARACTER SET utf8;
 >```
 >>Makemigrations and migrate in django:
->```bash
->cd FaceMaster/
->```
 >```python
+>cd FaceMaster/
 >python3 manage.py makemigrations
 >python3 manage.py migrate
 >```
@@ -80,9 +80,7 @@ Follow the steps below to launch FaceMaster
 >cd FaceMaster/
 >$python3 manage.py runserver
 >```
->>After all these steps, you can type "127.0.0.1:8000/" in your browser address bar to access the "FaceMaster" web you just deloyed.
->
->>And you were using the default Django server just now. To deploy it on Apache or uwsgi+nginx, there are more steps to go. Have fun.
+>>After all these steps, you can type "127.0.0.1:8000/" in your browser address bar to access the "FaceMaster" website you just deloyed.You were using the default Django server just now. To deploy it on Apache or uwsgi+nginx, there are more steps to go. Have fun.
 ## Contact me
 >I'd be really happy if you have some questions to ask me.
 >
