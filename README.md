@@ -12,40 +12,40 @@
 FaceMaster is a django-based website. It uses Mysql as its database. Besides, a celery plus reddis module is required to provide asynchronous task processing capabilities. All the required libraries and some tips will be given as below. Note that all the commands below are tested under Ubuntu 16.04.3 LTS 64 bit system, if you are in other distributions of linux, please change the command to the corresponding pattern.
 >>This is a python3 project, so you should first install python3 on your platform.Also, pip is a gorgeous tool for installing Python packages. Install pip3 by running:
 >```bash
->$sudo apt-get install python3-pip
+>$ sudo apt-get install python3-pip
 >```
 >>Then install Django. Type the command below or following the instructions on the [Django official site](https://www.djangoproject.com/).
 >```bash
->$sudo pip3 install Django==1.11.4
+>$ sudo pip3 install Django==1.11.4
 >```
 >>Then install mysql-server, mysql-client and libmysqlclient-dev library by typing the command below. You'll be asked to set a password for the root user when install mysql-server.
 >```bash
->$sudo apt-get install mysql-server
->$sudo apt-get install mysql-client
->$sudo apt-get install libmysqlclient-dev
+>$ sudo apt-get install mysql-server
+>$ sudo apt-get install mysql-client
+>$ sudo apt-get install libmysqlclient-dev
 >```
 >>It's also recommended to install mysql-workbench to get a friendlier access to the Mysql server. Type this:
 >```bash
->$sudo apt-get install mysql-workbench
+>$ sudo apt-get install mysql-workbench
 >```
 >>Install mysqlclient to build the bridge between Django and Mysql-server, typing:
 >```bash
->$sudo apt-get install python3-dev
->$sudo pip3 install mysqlclient
+>$ sudo apt-get install python3-dev
+>$ sudo pip3 install mysqlclient
 >```
 >>Install celery and reddis, typing this:
 >```bash
->$sudo pip3 install celery==4.1.1
->$sudo apt-get install redis-server
->$sudo pip3 install redis
+>$ sudo pip3 install celery==4.1.1
+>$ sudo apt-get install redis-server
+>$ sudo pip3 install redis
 >```
 >>I'm using a python library called itsdangerous to help generate a token for account-activation to set a time out, so type the command below to install it:
 >```bash
->$sudo pip3 install itsdangerous
+>$ sudo pip3 install itsdangerous
 >```
 >>Also, the face recognition library is from Baidu. Type the command below to install baidu-aip:
 >```bash
->$sudo pip3 install baidu-aip==1.5.0.0
+>$ sudo pip3 install baidu-aip==1.5.0.0
 >```
 ## How to launch FaceMaster
 Follow the steps below to launch FaceMaster
@@ -82,6 +82,6 @@ Follow the steps below to launch FaceMaster
 >```
 >>After all these steps, you can type "127.0.0.1:8000/" in your browser address bar to access the "FaceMaster" website you just deloyed.You were using the default Django server just now. To deploy it on Apache or uwsgi+nginx, there are more steps to go. Have fun.
 ## Contact me
->I'd be really happy if you have some questions to ask me.
+>Any question on this project is warmly welcomed.
 >
->Contact me at frankpeng740@yahoo.com
+>My email address is: frankpeng740@yahoo.com
