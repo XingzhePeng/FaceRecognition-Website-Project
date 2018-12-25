@@ -5,45 +5,45 @@
 * [Contact me](#contact-me)
 
 ## FaceMaster at a glance
->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FaceMaster is a research project by Frank. To take a glance at FaceMaster, just click [here](http://123.207.183.210/).You can get started by uploading some photos with human faces. What we first do is to extract all the face information in your photos. And with the technology called face recognition, we are able to find out which faces are the same person. Finally we keep an N:N relationship between the photos and people inside them. That is, we not only know all the people inside any particular photo but also know all the photos that contain one particular person. Here's a sample page.
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FaceMaster is a research project by Peng Xingzhe. To take a glance at FaceMaster, just click [here](http://123.207.183.210/).You can get started by uploading some photos with human faces inside. What we do first is to extract all the faces in your photos. And with the technology face recognition, we are able to find out which faces are of the same person. Finally we keep an N:N relationship between the photos and people. That is we are aware not only of all the people inside any particular photo but also of all the photos that contain one particular person. Here's a sample page of FaceMaster.
 >
 >[<img src="sample.png">](http://123.207.183.210/)
 ## Requirements to deploy FaceMaster
-FaceMaster is a django-based website. It uses Mysql as its database. Besides, a celery plus reddis module is required to provide asynchronous task processing capabilities. All the required libraries and some tips will be given as below. Note that all the commands below are tested under Ubuntu 16.04.3 LTS 64 bit system, if you are in other distributions of linux, please change the command to the corresponding pattern.
+FaceMaster uses django as its back-end, mysql as its database. Besides, a celery plus reddis module is required to provide asynchronous processing capabilitiy. All the required libraries and some tips will be given as below. Note that all the commands below had been tested well on Ubuntu 16.04 LTS 64 bit system, if you were in other distribution of linux, we suggest changing the commands to the corresponding pattern.
 >>This is a python3 project, so you should first install python3 on your platform.Also, pip is a gorgeous tool for installing Python packages. Install pip3 by running:
 >```bash
 >$ sudo apt-get install python3-pip
 >```
->>Then install Django. Type the command below or following the instructions on the [Django official site](https://www.djangoproject.com/).
+>>Then install django. Type the command below or following the instructions on the [django official site](https://www.djangoproject.com/).
 >```bash
 >$ sudo pip3 install Django==1.11.4
 >```
->>Then install mysql-server, mysql-client and libmysqlclient-dev library by typing the command below. You'll be asked to set a password for the root user when install mysql-server.
+>>Then install mysql-server, mysql-client and libmysqlclient-dev by typing the command below. You'll be asked to set a password for the root user of mysql when install mysql-server.
 >```bash
 >$ sudo apt-get install mysql-server
 >$ sudo apt-get install mysql-client
 >$ sudo apt-get install libmysqlclient-dev
 >```
->>It's also recommended to install mysql-workbench to get a friendlier access to the Mysql server. Type this:
+>>We also recommend you to install mysql-workbench to get a friendly interaction to mysql database, typing:
 >```bash
 >$ sudo apt-get install mysql-workbench
 >```
->>Install mysqlclient to build the bridge between Django and Mysql-server, typing:
+>>Install mysqlclient to build the connection between django and Mysql-server, typing:
 >```bash
 >$ sudo apt-get install python3-dev
 >$ sudo pip3 install mysqlclient
 >```
->>Install celery and reddis, typing this:
+>>Install celery and reddis, typing:
 >```bash
 >$ sudo pip3 install celery==4.1.1
 >$ sudo apt-get install redis-server
 >$ sudo pip3 install redis
 >```
->>I'm using a python library called itsdangerous to help generate a token for account-activation to set a time out, so type the command below to install it:
+>>We use a python library, itsdangerous to generate a token to set a time-out for account activation. Type the command below to install it:
 >```bash
 >$ sudo pip3 install itsdangerous
 >```
->>Also, the face recognition library is from Baidu. Type the command below to install baidu-aip:
+>>Also, the face recognition library, baidu-aip is from Baidu. Type the command below to install baidu-aip:
 >```bash
 >$ sudo pip3 install baidu-aip==1.5.0.0
 >```
@@ -57,7 +57,7 @@ Follow the steps below to launch FaceMaster
 >```bash
 >FaceMaster/main/task.py
 >```
->>Create a database by typing:
+>>Create a mysql database by typing:
 >```bash
 >mysql -uroot -p
 >```
@@ -70,17 +70,21 @@ Follow the steps below to launch FaceMaster
 >python3 manage.py makemigrations
 >python3 manage.py migrate
 >```
->>launch Celery first:
+>>launch celery first:
 >```bash
 >cd FaceMaster/
 >$celery -A demo worker -l info
 >```
->>Launch Django then. Go to base path of the django project and type the command below:
+>>Launch django then. Type the command below:
 >```bash
 >cd FaceMaster/
 >$python3 manage.py runserver
 >```
->>After all these steps, you can type "127.0.0.1:8000/" in your browser address bar to access the "FaceMaster" website you just deloyed.You were using the default Django server just now. To deploy it on Apache or uwsgi+nginx, there are more steps to go. Have fun.
+>>After all the steps, you can type the following address in your browser to access the "FaceMaster" website you just deloyed.
+>```bash
+>127.0.0.1:8000/
+>```
+Note that following the steps above you are just using the built-in server of django. To deploy it on Apache or uwsgi+nginx, there are more steps to go.
 ## Contact me
 >Any question on this project is warmly welcomed.
 >
