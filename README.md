@@ -84,7 +84,7 @@ Follow the steps below to launch FaceMaster
 >```bash
 >127.0.0.1:8000/
 >```
-Note that following the steps above you are just using the built-in server of django. To deploy it on Apache or uwsgi+nginx, there are more steps to go.
+>>Note that following the steps above you are just using the built-in server of django. To deploy it on Apache or uwsgi+nginx, there are more steps to go.
 ## Contact me
 >Any question on this project is warmly welcomed.
 >
